@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                       
+    "module": "CommonJS",        
+    "moduleResolution": "Node", 
+    "strict": true,                          
+    "esModuleInterop": true,                
+    "skipLibCheck": true,                   
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",                     
+    "rootDir": ".",                        
+    "baseUrl": "./",                       
+    "paths": {
+      "*": ["*", "*.ts"]  
+    },
+    "typeRoots": ["node_modules/@types"],
+    "types": ["jest", "node"]
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

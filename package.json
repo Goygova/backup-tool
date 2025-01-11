@@ -1,0 +1,36 @@
+{
+  "name": "backup-tool",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "ts-node src/index.ts",
+    "list": "ts-node index.ts list",
+    "restore": "ts-node index.ts restore",
+    "prune": "ts-node index.ts prune",
+    "snapshot": "ts-node index.ts snapshot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.5",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "commander": "^13.0.0",
+    "date-fns": "^4.1.0",
+    "debug": "^4.4.0",
+    "fs-extra": "^11.2.0",
+    "uuid": "^11.0.4"
+  }
+}
