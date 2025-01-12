@@ -57,12 +57,14 @@ npm run snapshot ./test_data ./snapshots
 
 Example output:
 
-# Creating Snapshots:
-
+```
+Creating Snapshots:
 Traversing directory: test_data/subdir2
 Traversing directory: test_data/subdir1
 Snapshot saved to: snapshots/d8d684c0-e115-4d91-8bc5-084f26334e26.json
 Snapshot size (unique files): 60 bytes
+
+```
 
 Note: if you want to create the same snapshot with the same UNCHANGED files you will need to remove data from hashMap in ./storage folder first, otherwise it won't crate a new snapshot even if you remove snapshot from ./snapshots folder.
 
@@ -86,8 +88,9 @@ npm run list ./snapshots
 
 Example output:
 
-==================
+```
 1 d8d684c0-e115-4d91-8bc5-084f26334e26 2025-01-11 12:47:18 60 B 60 B
+```
 
 ### Restore from a Snapshot
 
@@ -108,12 +111,15 @@ npm run restore 956acbbc-fe05-4011-af67-00ff0919c565 ./snapshots ./restore_test
 ```
 
 Example output:
+
+```
 Restoring snapshot...
-==================
 
 - Restoring snapshot "956acbbc-fe05-4011-af67-00ff0919c565" to "./restore_test"...
 - Restoring file: test_data/file1.txt
 - Snapshot "956acbbc-fe05-4011-af67-00ff0919c565" restored successfully.
+
+```
 
 ### Prune Snapshots
 
@@ -133,12 +139,14 @@ npm run prune ./snapshots 956acbbc-fe05-4011-af67-00ff0919c565
 ```
 
 Example output:
+
+```
 Pruning Snapshots:
-==================
 
 - Pruning snapshot with ID: `956acbbc-fe05-4011-af67-00ff0919c565`
 - Deleted snapshot file: `snapshots/956acbbc-fe05-4011-af67-00ff0919c565.json`
 - Successfully pruned snapshot `956acbbc-fe05-4011-af67-00ff0919c565` and updated the hash map.
+```
 
 ### Hash Map Usage
 
