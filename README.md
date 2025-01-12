@@ -152,13 +152,12 @@ Pruning Snapshots:
 
 In ./storage folder there is HashMap json file. It's used for following reasons:
 
-- When creating a snapshot, the hash map is populated with file hashes and their corresponding paths.
-  This allows future operations to quickly verify the integrity of files and track their references in snapshots.
+- When creating a snapshot, the hash map is populated with file hashes and their corresponding contents.
+  This allows future operations to quickly verify the integrity of files.
   The hash map helps in identifying files that already exist in the backup and avoiding redundancy (if the same file appears in multiple snapshots).
 - When restoring a snapshot, the hash map helps track which files are included in the snapshot, ensuring that files are restored to the correct state. If multiple snapshots reference the same file, the hash map ensures that the correct version of the file (from the selected snapshot) is restored. Before restoration, the hash map ensures that only files referenced by the snapshot are copied, avoiding extraneous files being restored.
 - The hash map is critical for pruning operations. After deleting a snapshot, the hash map ensures that only files still referenced by the remaining snapshots are retained.
-  The hash map helps identify which files are no longer referenced by any snapshot and can be safely deleted. Without it, the tool might accidentally delete files still referenced by other snapshots.
-  This makes pruning efficient and safe, ensuring no data loss from the remaining snapshots.
+  The hash map helps identify which files are no longer referenced by any snapshot and can be safely deleted. Without it, the tool might accidentally delete files still referenced by other snapshots.This makes pruning efficient and safe, ensuring no data loss from the remaining snapshots.
 
 ### Tests
 
